@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="icon" href="assets/img/KLogo.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/img/KLogo.png">
+    
+    <title>Kier Vincent</title>
+</head>
+
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <a href="#" class="nav__logo" id="navLogo" style="display: flex; align-items: center; gap: 5px; height: 100%;">
+                <img src="assets/img/KLogo.png" alt="Logo" style="height: 50px; width: auto; display: block;">
+                <span style="display: flex; align-items: center;">Kier</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#blog" class="nav__link">Blogs</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    
+                    <li class="nav__item" style="display: flex; align-items: center;">
+                        <i class='bx bx-moon change-theme' id="theme-button"></i>
+                    </li>
+
+                    <li class="nav__item" id="mobileLoginItem" style="display: none;">
+                        <span class="nav__link" style="cursor: pointer; color: var(--first-color); font-weight: 600;">Login</span>
+                    </li>
+                    <li class="nav__item" id="mobileLogoutItem" style="display: none;">
+                        <span class="nav__link" style="cursor: pointer; color: red;">Logout</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav__auth">
+                <a id="loginBtn" class="nav__login-btn" href="#">Login</a>
+
+                <div class="nav__notification" id="notifDropdownContainer" style="display: none; position: relative; margin-right: 15px;">
+                    <i class='bx bx-bell' id="notifBtn" style="font-size: 1.5rem; color: var(--second-color); cursor: pointer; transition: .3s;"></i>
+                    <span id="notifBadge" style="display: none; position: absolute; top: -5px; right: -5px; background: red; color: white; font-size: 0.6rem; padding: 2px 5px; border-radius: 50%;">0</span>
+                    
+                    <div class="notif__dropdown" id="notifDropdown">
+                        <div class="notif__header">
+                            <span>Notifications</span>
+                            <span id="markAllRead" style="font-size: 0.75rem; cursor: pointer; color: var(--first-color);">Mark all read</span>
+                        </div>
+                        <div class="notif__list" id="notifList">
+                            <div style="padding: 10px; text-align: center; color: #888; font-size: 0.85rem;">No notifications</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="userProfile" class="nav__profile">
+                    <span id="userNameDisplay" class="nav__user-name"></span>
+                    
+                    <img id="profileImg" src="" alt="User" class="nav__profile-img">
+                    
+                    <div id="profileIcon" class="nav__profile-icon" style="display: none;">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    
+                    <div id="logoutDropdown" class="nav__dropdown">
+                        <span id="logoutBtn" class="nav__logout">Logout</span>
+                    </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">
+                    Hi,<br>I am <span class="home__title-color">Kier</span><br>
+                    <span id="typed"></span>
+                </h1>
+                <div class="home__actions">
+                    <a href="assets/pdf/Kier_Resume.pdf" download class="button">Download Resume</a>
+                    <div class="home__social-inline">
+                        <a href="https://www.facebook.com/kierwya/" target="_blank" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/kiervincent_/" target="_blank" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.tiktok.com/@kirvincnt" target="_blank" class="home__social-icon"><i class='bx bxl-tiktok'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__img">
+                <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0" mask-type="alpha">
+                        <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                    </mask>
+                    <g mask="url(#mask0)">
+                        <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                        <image class="home__blob-img" x="0" y="50" href="assets/img/profile_fixed.png" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/about.jpg" alt="">
+                </div>
+                <div class="about__data">
+                    <h2 class="about__subtitle">I’m Kier Vincent</h2>
+                    <p class="about__text">
+                        A passionate creator who loves merging technology with design. I’m a 4th-year Computer Engineering student with a strong interest in both technical innovation and creative expression. As a Multimedia Artist, I specialize in creating impactful visuals through graphic design and video editing, bringing ideas to life for events, organizations, and projects.<br><br>
+                        With experience in producing publication materials, digital content, and event media, I continue to explore ways to use my creativity not only for personal growth but also to contribute meaningfully to the community I’m part of.<br>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills__container bd-grid">
+                <div>
+                    <h2 class="skills__subtitle">Professional Skills</h2>
+                    <p class="skills__text">A motivated and creative Computer Engineering student with strong skills in editing, design, and software development. Experienced in producing visual content for organizations and developing functional desktop applications using modern tools and frameworks. Dedicated to delivering high-quality output in both technical and creative projects.</p>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-video skills__icon'></i>
+                            <span class="skills__name">Video Editing</span>
+                        </div>
+                        <div class="skills__bar skills__html"></div>
+                        <div><span class="skills__percentage">95%</span></div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-image skills__icon'></i>
+                            <span class="skills__name">Photo Editing</span>
+                        </div>
+                        <div class="skills__bar skills__css"></div>
+                        <div><span class="skills__percentage">85%</span></div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-pen skills__icon'></i>
+                            <span class="skills__name">Graphic Design</span>
+                        </div>
+                        <div class="skills__bar skills__js"></div>
+                        <div><span class="skills__percentage">65%</span></div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bx-code-alt skills__icon'></i>
+                            <span class="skills__name">Programming</span>
+                        </div>
+                        <div class="skills__bar skills__ux"></div>
+                        <div><span class="skills__percentage">85%</span></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/img/skills.png" alt="" class="skills__img">
+                </div>
+            </div>
+        </section>
+
+        <section class="work section" id="work">
+            <h2 class="section-title">Projects</h2>
+            <div class="work__container bd-grid">
+                <a href="https://www.facebook.com/share/p/17fFpa8a1g/" class="work__img" target="_blank">
+                    <img src="assets/img/solid.png" alt="Solidarity Pubmat">
+                </a>
+                <a href="https://web.facebook.com/share/p/17WvLpRpty/" class="work__img" target="_blank">
+                    <img src="assets/img/pampunla.png" alt="Pampunla Poster">
+                </a>
+                <a href="https://www.facebook.com/share/p/199M9A667F/" class="work__img" target="_blank">
+                    <img src="assets/img/committee.png" alt="Committee Pubmat">
+                </a>
+                <a href="https://www.facebook.com/share/p/17ChikXKfN/" class="work__img" target="_blank">
+                    <img src="assets/img/fresh.png" alt="Freshalubong Countdown">
+                </a>
+                <a href="https://www.facebook.com/share/p/16Vq6XU9d3/" class="work__img" target="_blank">
+                    <img src="assets/img/teachmonth.png" alt="Teachers' Month">
+                </a>
+                <a href="https://www.facebook.com/share/p/1JWeaNLN8h/" class="work__img" target="_blank">
+                    <img src="assets/img/midterm.png" alt="Pasadong Midterm Pubmat">
+                </a>
+            </div>
+        </section>
+
+        <section class="blog section" id="blog">
+            <h2 class="section-title">Blogs</h2>
+
+            <div class="blog__controls bd-grid">
+                <button id="addBlogBtn" class="button" style="display: none;"><i class='bx bx-plus'></i> Add Blog</button>
+            </div>
+
+            <div class="blog__container bd-grid" id="blog-list"></div>
+            <p id="emptyBlogsMessage" class="empty-blogs-message" style="display: none;"></p>
+
+            <div id="showMoreContainer" style="text-align: center; margin-top: 2rem; display: none;">
+                <span id="showMoreBtn" class="blog__view-more-btn">Show More</span>
+            </div>
+
+            <div id="blogModal" class="modal">
+                <div class="modal-content blog-view-content">
+                    <div class="modal-header">
+                        <h3 id="blogModalTitle" style="margin:0; font-size: 1.1rem; text-align: center; flex-grow: 1;">Blog</h3>
+                        <span class="close-button" id="closeBlogModal">&times;</span>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div id="blogPostView" class="fb-post-view">
+                            <div class="fb-post-header">
+                                <img id="blogAuthorImg" src="" alt="" class="fb-author-img">
+                                <div class="fb-author-info">
+                                    <h3 id="blogAuthorName"></h3>
+                                    <span id="blogPostDate" class="fb-post-date"></span>
+                                </div>
+                            </div>
+                            <p id="blogViewDescription" class="fb-post-description"></p>
+                            <img id="blogViewImage" src="" class="fb-post-image">
+
+                            <div class="blog-modal-actions" style="margin-top: 15px; display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+                                <div id="modalLikeBtn" style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 1.2rem; color: var(--text-color);">
+                                    <i class='bx bx-heart' id="modalLikeIcon"></i>
+                                    <span id="modalLikeCount" style="font-size: 1rem; font-weight: 600;">0</span>
+                                </div>
+                                
+                                <a id="modalSourceLink" href="#" target="_blank" style="display:none; color: var(--first-color); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                                    View Source <i class='bx bx-link-external'></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="comments-section">
+                            <h3 class="comments-title">Comments</h3>
+                            <div id="commentsList" class="comments-list"></div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <form id="commentForm" class="comment-form" style="display:none;">
+                            <div class="comment-input-wrapper fb-style-input">
+                                <textarea id="commentInput" class="comment-input" placeholder="Write a comment..." rows="1" required></textarea>
+                                <button type="submit" class="comment-submit"><i class='bx bxs-send'></i></button>
+                            </div>
+                        </form>
+                        <p id="loginToCommentMsg" style="font-size: 0.9rem; text-align:center; color: grey; display:none; padding: 10px;">
+                            Please <span style="color: var(--first-color); cursor: pointer; font-weight: 600;" onclick="document.getElementById('loginBtn').click()">login</span> to comment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="addBlogModal" class="modal">
+                <div class="modal-content add-blog-content">
+                    <span class="close-button" id="closeAddBlogModal">&times;</span>
+                    <h2>New Post</h2>
+                    <form id="add-blog-form">
+                        <input type="text" id="new-blog-title" placeholder="Title" required class="modal-input">
+                        <input type="url" id="new-blog-image" placeholder="Image URL" required class="modal-input">
+                        <input type="url" id="new-blog-link" placeholder="Full Link" required class="modal-input">
+                        <textarea id="new-blog-description" placeholder="Description" required class="modal-input" rows="4"></textarea>
+                        <button type="submit" class="button">Publish</button>
+                        <p id="post-message"></p>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="editBlogModal" class="modal">
+                <div class="modal-content add-blog-content">
+                    <span class="close-button" id="closeEditBlogModal">&times;</span>
+                    <h2>Edit Post</h2>
+                    <form id="edit-blog-form">
+                        <input type="hidden" id="edit-blog-id">
+                        <input type="text" id="edit-blog-title" placeholder="Title" required class="modal-input">
+                        <input type="url" id="edit-blog-image" placeholder="Image URL" required class="modal-input">
+                        <input type="url" id="edit-blog-link" placeholder="Full Link" required class="modal-input">
+                        <textarea id="edit-blog-description" placeholder="Description" required class="modal-input" rows="4"></textarea>
+                        <button type="submit" class="button">Update</button>
+                        <p id="edit-message"></p>
+                    </form>
+                </div>
+            </div>
+
+            <div id="loginModal" class="modal">
+                            <div class="modal-content auth-card-content">
+                                <span class="close-button" id="closeLoginModal">&times;</span>
+                                <h2 style="text-align:center; margin-bottom: 1.5rem;">Welcome Back</h2>
+                                
+                                <form id="emailLoginForm" class="auth-form">
+                                    <div class="auth-input-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="email" id="loginEmail" placeholder="Email" required>
+                                    </div>
+                                    <div class="auth-input-group">
+                                        <i class='bx bx-lock-alt'></i>
+                                        <input type="password" id="loginPassword" placeholder="Password" required>
+                                        <i class='bx bx-hide password-toggle' id="toggleLoginPass"></i> 
+                                    </div>
+                                    <button type="submit" class="button auth-btn">Log In</button>
+                                </form>
+
+                                <div class="auth-divider"><span>OR</span></div>
+
+                                <button id="googleLoginBtn" class="google-btn">
+                                    <i class='bx bxl-google'></i> Login using Gmail
+                                </button>
+
+                                <p class="auth-switch-text">
+                                    Don't have an account? <span id="openRegisterLink">Create one</span>
+                                </p>
+                            </div>
+                        </div>
+
+        <div id="registerModal" class="modal">
+            <div class="modal-content auth-card-content">
+                <span class="close-button" id="closeRegisterModal">&times;</span>
+                <h2 style="text-align:center; margin-bottom: 1.5rem;">Create Account</h2>
+                
+                <form id="registerForm" class="auth-form">
+                    <div class="auth-row">
+                        <div class="auth-input-group">
+                            <i class='bx bx-user'></i>
+                            <input type="text" id="regFirstName" placeholder="First Name" required>
+                        </div>
+                        <div class="auth-input-group">
+                            <i class='bx bx-user'></i>
+                            <input type="text" id="regLastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="auth-input-group">
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" id="regEmail" placeholder="Email" required>
+                    </div>
+ 
+                    <div class="auth-input-group">
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" id="regPassword" placeholder="Password (6+ chars)" required minlength="6">
+                        <i class='bx bx-hide password-toggle' id="toggleRegPass"></i>
+                    </div>
+                <button type="submit" class="butt   on auth-btn">Create Account</button>
+                </form>
+
+                <div class="auth-divider"><span>OR</span></div>
+
+                <button id="googleRegBtn" class="google-btn">
+                    <i class='bx bxl-google'></i> Login using Gmail
+                </button>
+
+                <p class="auth-switch-text">
+                    Already have an account? <span id="openLoginLink">Log In</span>
+                    </p>
+                </div>
+            </div>
+
+            <div id="logoutModal" class="modal">
+                <div class="modal-content logout-confirm-content">
+                    <span class="close-button" id="closeLogoutModal">&times;</span>
+                    <h2 style="margin-bottom: 1rem; text-align:center; font-size:1.2rem;">Confirm Logout</h2>
+                    <p style="text-align: center; margin-bottom: 1.5rem; font-size: 0.9rem;">Are you sure you want to log out?</p>
+                    <div style="display: flex; justify-content: center; gap: 10px;">
+                        <button id="confirmLogoutBtn" class="button confirm-logout">Yes</button>
+                        <button id="cancelLogoutBtn" class="button cancel-logout">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact__container bd-grid">
+                <div class="contact__info">
+                    <h3 class="contact__subtitle-main">Get in touch</h3>
+                    <p class="contact__text-main">Let's visualize your ideas. Contact me for creative services.</p>
+
+                    <div class="contact__data">
+                        <div class="contact__information">
+                            <i class='bx bx-phone contact__icon'></i>
+                            <span class="contact__text-info">+63 995 128 8870</span>
+                        </div>
+
+                        <div class="contact__information">
+                            <i class='bx bx-envelope contact__icon'></i>
+                            <span class="contact__text-info">Kiervasquezz@gmail.com</span>
+                        </div>
+
+                        <div class="contact__information">
+                            <i class='bx bx-home contact__icon'></i>
+                            <span class="contact__text-info">Navarro, General Trias City, Cavite, Philippines 4107</span>
+                        </div>
+
+                        <div class="contact__information" style="margin-top: 0.5rem;">
+                            <i class='bx bx-user contact__icon' style="font-size: 1.1rem;"></i>
+                            <span id="visitorCountDisplay" class="contact__text-info" style="font-size: 0.85rem; color: #888;">
+                                Loading...
+                            </span>
+                        </div>
+
+                        <div class="contact__information" style="margin-top: 0.2rem;">
+                            <i class='bx bx-show contact__icon' style="font-size: 1.1rem;"></i>
+                            
+                            <span id="onlineViewersDisplay" class="contact__text-info" style="font-size: 0.85rem; color: #888;">
+                                1 Viewer (currently you)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact__form">
+                    <div class="contact__inputs">
+                        <input type="text" name="user_name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="user_email" placeholder="Email" class="contact__input" required>
+                    </div>
+                    <textarea name="message" cols="0" rows="10" class="contact__input" placeholder="Message" required></textarea>
+                    <input type="submit" value="Send Message" class="contact__button button">
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+            <div class="footer__container bd-grid">
+                
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <img src="assets/img/KLogo.png" alt="Logo" class="footer__logo-img">
+                        <span class="footer__logo-text">Kier Vincent</span>
+                    </a>
+                    <p class="footer__description">
+                        Visualizing ideas through technology<br>and creative design.
+                    </p>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Explore</h3>
+                    <ul class="footer__links">
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#work" class="footer__link">Projects</a></li>
+                        <li><a href="#blog" class="footer__link">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Follow Me</h3>
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/kierwya/" target="_blank" class="footer__social-icon"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/kiervincent_/" target="_blank" class="footer__social-icon"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.linkedin.com/in/kiervincentvasquez/" target="_blank" class="footer__social-icon"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://www.discord.com/users/574016609765556244/" target="_blank" class="footer__social-icon"><i class='bx bxl-discord'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__copy-bar">
+                <p class="footer__copy">&#169; 2025 Kier Vincent. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <div class="star-bg">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () { emailjs.init("8HWlFl-HQRyDSbGsH"); })();
+    </script>
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
